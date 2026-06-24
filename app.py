@@ -249,6 +249,11 @@ forecast_df = pd.DataFrame(
 # FORECAST CHART
 # -------------------------
 
+st.write(close.head())
+st.write(close.tail())
+st.write(type(close))
+st.write(close.isna().sum())
+
 st.subheader("Forecast")
 
 fig2 = go.Figure()
