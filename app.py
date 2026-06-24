@@ -77,7 +77,7 @@ if df.empty:
 # INDICATORS
 # -------------------------
 
-close = df["Close"]
+close = df["Close"].squeeze()
 
 # Moving Average
 df["MA20"] = close.rolling(20).mean()
