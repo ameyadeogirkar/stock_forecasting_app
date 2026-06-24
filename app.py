@@ -79,6 +79,14 @@ if df.empty:
 
 close = df["Close"].squeeze()
 
+close = pd.to_numeric(close, errors="coerce")
+
+close = close.dropna()
+
+close = close.replace([np.inf, -np.inf], np.nan)
+
+close = close.dropna()
+
 # Moving Average
 df["MA20"] = close.rolling(20).mean()
 
